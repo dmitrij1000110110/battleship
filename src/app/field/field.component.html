@@ -1,0 +1,38 @@
+<div class="main">
+
+  <div class="field">
+    <div *ngFor="let row of myField.cells">
+      <button
+        class="cell"
+        [disabled]="mode === 1"
+        *ngFor="let cell of row"
+        (click)="myField.onClick(cell)"
+        [id]="cell.id"
+      >
+      </button>
+    </div>
+
+    <button
+      id="start"
+      class="start"
+      [disabled]="!myField.correct"
+      (click)="startGame();"
+    >
+      Расставьте корабли
+    </button>
+  </div>
+
+  <div class="field">
+    <div *ngFor="let row of enemyField.cells">
+      <button
+        class="cell"
+        [disabled]="mode === 0 || cell.shot"
+        *ngFor="let cell of row"
+        (click)="enemyField.onClick(cell)"
+        [id]="cell.id"
+      >
+      </button>
+    </div>
+  </div>
+
+</div>
