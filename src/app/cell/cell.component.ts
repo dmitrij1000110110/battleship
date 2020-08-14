@@ -22,7 +22,7 @@ export class Cell {
 
   putShip() {
     this.containsShip = true
-    if (this.player) document.getElementById(this.id.toString()).style.background = "blue"
+    if (this.player) document.getElementById(this.id.toString()).style.background = "green"
   }
 
   removeShip() {
